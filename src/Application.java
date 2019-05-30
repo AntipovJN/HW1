@@ -3,20 +3,21 @@ public class Application {
     public static void main(String[] args) {
         System.out.println((betCheck(1, 2, 2, 3)));
         drawDiamond(9);
-        System.out.println(power(10,3));
-        System.out.println(power(10,-3));
+        System.out.println(numberInDegree(10,3));
+        System.out.println(numberInDegree(10,-3));
     }
 
 
-    public static Integer power(int number, int power) {
-        if (power == 0) {
+    public static Integer numberInDegree(int number, int degree) {
+        if (degree == 0) {
             return 1;
         }
         int raiseToPower = 1;
-        for (int i = 0; i < power; i++) {
+
+        for (int i = 0; i < (degree > 0 ? degree : degree*-1) ; i++) {
             raiseToPower = raiseToPower * number;
         }
-        return raiseToPower;
+        return degree > 0 ? raiseToPower : 1/raiseToPower;
     }
 
     public static Integer betCheck (int firstTeam, int secondTeam, int firstScoreTeamBet, int secondScoreTeamBet) {
